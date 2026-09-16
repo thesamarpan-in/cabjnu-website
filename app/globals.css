@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #F1EEE2;
+    color: #1E2A22;
+  }
+
+  /* Visible keyboard focus everywhere — never remove this outline */
+  :focus-visible {
+    outline: 2px solid #48604C;
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* The specimen-sheet section index: a numbered label sitting in the
+     left rail, paired with a hairline that runs the width of the page. */
+  .specimen-index {
+    font-family: var(--font-inter);
+    font-size: 0.8125rem;
+    letter-spacing: 0.02em;
+    color: #48604C;
+    font-weight: 500;
+  }
+
+  .hairline {
+    border-top: 1px solid #C9C2AC;
+  }
+
+  /* Taxonomic tag styles — colors carry meaning throughout the site:
+     moss = biological/plant, clay = Ayurvedic property, indigo = molecular */
+  .tag-bio {
+    color: #34452F;
+    background-color: rgba(72, 96, 76, 0.1);
+  }
+  .tag-ayurvedic {
+    color: #7c4526;
+    background-color: rgba(161, 90, 50, 0.12);
+  }
+  .tag-molecular {
+    color: #33415A;
+    background-color: rgba(51, 65, 90, 0.1);
+  }
+}

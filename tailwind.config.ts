@@ -5,23 +5,27 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: '#1E2A22',
-        paper: '#F1EEE2',
+        ink: '#1C1C1C',
+        paper: '#FAF7F1',
         moss: {
-          DEFAULT: '#48604C',
-          dark: '#34452F',
+          DEFAULT: '#8A9A7E',
+          dark: '#6E7D64',
         },
         clay: {
-          DEFAULT: '#A15A32',
+          DEFAULT: '#D95D39',
         },
         indigo: {
-          DEFAULT: '#33415A',
+          DEFAULT: '#3A4A52',
         },
-        line: '#C9C2AC',
+        gold: {
+          DEFAULT: '#C9A227',
+        },
+        line: '#D9D2C4',
       },
       fontFamily: {
-        display: ['var(--font-fraunces)', 'Georgia', 'serif'],
-        body: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-cormorant)', 'Georgia', 'serif'],
+        accent: ['var(--font-marcellus)', 'Georgia', 'serif'],
+        body: ['var(--font-lato)', 'system-ui', 'sans-serif'],
       },
       maxWidth: {
         prose: '42rem',

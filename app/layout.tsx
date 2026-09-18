@@ -1,26 +1,47 @@
 import type { Metadata } from 'next';
-import { Fraunces, Inter } from 'next/font/google';
+import { Cormorant_Garamond, Marcellus, Lato } from 'next/font/google';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import './globals.css';
 
-const fraunces = Fraunces({
+const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
-  variable: '--font-fraunces',
-  weight: ['400', '500', '600'],
+  variable: '--font-cormorant',
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
 });
 
-const inter = Inter({
+const marcellus = Marcellus({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-marcellus',
+  weight: ['400'],
+  display: 'swap',
+});
+
+const lato = Lato({
+  subsets: ['latin'],
+  variable: '--font-lato',
+  weight: ['300', '400', '700'],
   display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: 'Centre for Ayurveda Biology, JNU',
+  metadataBase: new URL('https://ayurveda.thesamarpan.co.in'),
+  title: {
+    default: 'Centre for Ayurveda Biology, JNU',
+    template: '%s — Centre for Ayurveda Biology, JNU',
+  },
   description:
     'Bridging traditional Ayurvedic plant science with molecular biology, at Jawaharlal Nehru University.',
+  openGraph: {
+    title: 'Centre for Ayurveda Biology, JNU',
+    description:
+      'Bridging traditional Ayurvedic plant science with molecular biology, at Jawaharlal Nehru University.',
+    url: 'https://ayurveda.thesamarpan.co.in',
+    siteName: 'Centre for Ayurveda Biology, JNU',
+    locale: 'en_IN',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
@@ -29,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${marcellus.variable} ${lato.variable}`}>
       <body className="font-body">
         <Nav />
         <main>{children}</main>

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { researchAreas } from '@/lib/content/research-areas';
+import { plants } from '@/lib/content/plants';
+import ResearchNetworkDiagram from '@/components/ResearchNetworkDiagram';
 
 export default function Home() {
   return (
@@ -31,10 +33,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 01 — Research Areas */}
+      {/* 01 — Medicinal Plant Atlas teaser */}
       <section className="hairline pt-10 pb-14">
         <div className="grid grid-cols-[3rem_1fr] gap-x-6">
           <p className="specimen-index">01</p>
+          <div>
+            <h2 className="font-display text-2xl text-ink mb-2">
+              Medicinal Plant Atlas
+            </h2>
+            <p className="font-body text-sm text-ink/70 max-w-md mb-4">
+              A pilot record of {plants.length} medicinal plants documented
+              on the JNU campus — traditional use, botanical family, and
+              campus location for each, with scientific evidence to be
+              added as the Centre&apos;s database grows.
+            </p>
+            <Link
+              href="/atlas"
+              className="font-body text-sm text-moss hover:text-moss-dark transition-colors"
+            >
+              Explore the Atlas
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 02 — Research network (conceptual diagram, not the real graph) */}
+      <section className="hairline pt-10 pb-14">
+        <div className="grid grid-cols-[3rem_1fr] gap-x-6">
+          <p className="specimen-index">02</p>
+          <div>
+            <h2 className="font-display text-2xl text-ink mb-2">
+              How the Centre studies a plant
+            </h2>
+            <p className="font-body text-sm text-ink/70 max-w-md mb-6">
+              A conceptual view of the research chain — the actual,
+              data-driven version of this will grow as the Centre&apos;s
+              database is populated with verified evidence.
+            </p>
+            <ResearchNetworkDiagram />
+          </div>
+        </div>
+      </section>
+
+      {/* 03 — Research Areas */}
+      <section className="hairline pt-10 pb-14">
+        <div className="grid grid-cols-[3rem_1fr] gap-x-6">
+          <p className="specimen-index">03</p>
           <div>
             <h2 className="font-display text-2xl text-ink mb-6">
               Research Areas
@@ -55,10 +99,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 02 — Faculty preview */}
+      {/* 04 — Faculty preview */}
       <section className="hairline pt-10 pb-16">
         <div className="grid grid-cols-[3rem_1fr] gap-x-6">
-          <p className="specimen-index">02</p>
+          <p className="specimen-index">04</p>
           <div>
             <h2 className="font-display text-2xl text-ink mb-3">Faculty</h2>
             <p className="font-body text-sm text-ink/70 max-w-md mb-4">

@@ -50,20 +50,53 @@ English text between the tags.
 
 ## Adding a medicinal plant
 
-Plants live in Supabase, not in these content files, since the atlas
-needs to support search, GPS coordinates, and QR codes. See
-`supabase/migrations/0001_init.sql` for the table structure. Until an
-admin data-entry form exists (a later phase), add plants directly via
-the Supabase dashboard's Table Editor:
+Plants currently live in `lib/content/plants.ts` (a plain data file, not
+a live database yet — this keeps the Atlas fast and reliable before
+Ayurveda Day). To add one, open that file on GitHub and copy this block
+inside the square brackets:
 
-1. Log in to the project's Supabase dashboard.
-2. Table Editor -> `plants` -> Insert row.
-3. Fill in the fields you have verified information for; leave the rest
-   blank rather than guessing.
-4. Leave `published` unchecked until a faculty member has verified the
-   entry — unpublished rows aren't shown on the public site but are
-   visible to anyone with a researcher/faculty/admin account.
+```
+{
+  slug: 'plant-scientific-name',
+  commonName: 'Common Name',
+  scientificName: 'Genus species',
+  family: 'Family name',
+  location: 'Real location on JNU campus',
+  traditionalUse: {
+    en: 'English description, hedged as "traditionally used for..." — never a flat cure claim.',
+    hi: 'Hindi translation.',
+    sa: 'Sanskrit translation — mark as unreviewed if you are not confident in it.',
+  },
+},
+```
 
-Every phytochemical, molecular target, or disease claim should ideally
-trace to a row in `research_papers` (with a real DOI or PubMed ID) linked
-through `paper_evidence` — not typed in as free text with no source.
+Two options for translating `hi`/`sa`:
+- Ask Claude to draft them (as done for the first 10 plants) — but treat
+  the Sanskrit especially as a first draft needing review, since modern
+  biomedical terms (blood sugar, cholesterol, antioxidant) have no
+  classical equivalent.
+- Write them yourself if you're confident in the terminology.
+
+**Adding a photo:** put a real photo of the actual specimen at
+`public/images/plants/<slug>.jpg` (matching the plant's `slug` exactly)
+and add `photo: '/images/plants/<slug>.jpg'` to its entry. Until a real
+photo exists, leave `photo` unset — the page shows a clean "photo not
+yet added" placeholder rather than a stock or AI-generated image, since
+this is meant to be a record of the actual campus specimen.
+
+**QR codes are automatic** — the build script
+(`scripts/generate-qr.js`) reads plant slugs and generates a QR PNG for
+every plant at build time. When you add a plant to `plants.ts`, also
+add its `slug` to the `slugs` array at the top of
+`scripts/generate-qr.js` (the script can't read the `.ts` file
+directly) — then commit and push; the next deploy generates its QR
+automatically.
+
+Every phytochemical, molecular target, or disease claim beyond
+traditional/folk use should ideally trace to a row in `research_papers`
+(with a real DOI or PubMed ID) in Supabase, once that's populated —
+not typed in as free text with no source.
+
+**If you'd rather not edit files yourself:** send the plant's name,
+family, campus location, and traditional-use description in a message,
+and it can be added and a ready-to-push update prepared for you instead.

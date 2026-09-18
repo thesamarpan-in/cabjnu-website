@@ -1,8 +1,10 @@
 import Link from 'next/link';
 
 const links = [
+  { href: '/ayurveda-day', label: 'Ayurveda Day 2026' },
   { href: '/about', label: 'About' },
   { href: '/research-areas', label: 'Research Areas' },
+  { href: '/atlas', label: 'Plant Atlas' },
   { href: '/faculty', label: 'Faculty' },
 ];
 

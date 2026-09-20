@@ -104,12 +104,12 @@ export default function Home() {
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={plant.photo} alt={plant.scientificName} className="w-full h-full object-cover" />
                   ) : (
-                    <div
-                      className="plant-bg"
-                      style={{ background: `linear-gradient(135deg, ${color}22, ${color}44)`, color }}
-                    >
-                      {plant.commonName.charAt(0)}
-                    </div>
+                  <div
+                    className="plant-bg"
+                    style={{ background: `linear-gradient(135deg, ${color}18, ${color}38)` }}
+                  >
+                    <Leaf size={40} strokeWidth={1.25} color={color} />
+                  </div>
                   )}
                   <div className="plant-overlay">
                     <p className="plant-name">{plant.commonName}</p>

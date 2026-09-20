@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { Leaf } from 'lucide-react';
 import type { Plant } from '@/lib/content/plants';
 
 type Lang = 'en' | 'hi' | 'sa';
@@ -29,11 +30,13 @@ export default function PlantDetail({ plant }: { plant: Plant }) {
             onError={() => setImgError(true)}
           />
         ) : (
-          <div className="w-full max-w-md aspect-[4/3] rounded-xl border border-line flex items-center justify-center bg-ink/[0.03]">
-            <p className="font-body text-sm text-ink/40 text-center px-6">
-              Photo not yet added.
-              <br />
-              Add one at /public/images/plants/{plant.slug}.jpg
+          <div
+            className="w-full max-w-md aspect-[4/3] rounded-xl flex flex-col items-center justify-center gap-3"
+            style={{ background: 'linear-gradient(135deg, #D95D3918, #D95D3938)' }}
+          >
+            <Leaf size={44} strokeWidth={1.25} className="text-clay" />
+            <p className="font-body text-xs text-ink/40 text-center px-6">
+              Photo not yet added — add one at /public/images/plants/{plant.slug}.jpg
             </p>
           </div>
         )}

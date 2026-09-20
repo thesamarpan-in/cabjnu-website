@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Leaf } from 'lucide-react';
 import { plants } from '@/lib/content/plants';
 
 const colors = ['#4A5D4F', '#3A4A6B', '#C5A059', '#6B4A85', '#D95D39', '#2F6B66', '#8B5E34'];
@@ -32,9 +33,9 @@ export default function Atlas() {
               ) : (
                 <div
                   className="plant-bg"
-                  style={{ background: `linear-gradient(135deg, ${color}22, ${color}44)`, color }}
+                  style={{ background: `linear-gradient(135deg, ${color}18, ${color}38)` }}
                 >
-                  {plant.commonName.charAt(0)}
+                  <Leaf size={36} strokeWidth={1.25} color={color} />
                 </div>
               )}
               <div className="plant-overlay">

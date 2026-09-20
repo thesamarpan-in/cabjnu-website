@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Cormorant_Garamond, Marcellus, Lato } from 'next/font/google';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
+import ScrollProgress from '@/components/ScrollProgress';
 import './globals.css';
 
 const cormorant = Cormorant_Garamond({
@@ -52,6 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorant.variable} ${marcellus.variable} ${lato.variable}`}>
       <body className="font-body">
+        <ScrollProgress />
         <Nav />
         <main>{children}</main>
         <Footer />

@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Rebuilds daily so plant data added to the Google Sheet goes live even
+  # if nobody pushes code that day. Adjust the schedule if you want faster
+  # turnaround, but weigh that against GitHub Actions minutes usage.
+  schedule:
+    - cron: '0 3 * * *' # 03:00 UTC = 08:30 IST
 
 permissions:
   contents: read
@@ -35,6 +40,9 @@ jobs:
         env:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          PLANTS_SHEET_CSV_URL: ${{ secrets.PLANTS_SHEET_CSV_URL }}
+          NEXT_PUBLIC_QUIZ_RESULTS_ENDPOINT: ${{ secrets.NEXT_PUBLIC_QUIZ_RESULTS_ENDPOINT }}
+          NEXT_PUBLIC_COMMENTS_ENDPOINT: ${{ secrets.NEXT_PUBLIC_COMMENTS_ENDPOINT }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

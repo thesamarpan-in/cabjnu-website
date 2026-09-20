@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import { plants } from '@/lib/content/plants';
 
+const colors = ['#4A5D4F', '#3A4A6B', '#C5A059', '#6B4A85', '#D95D39', '#2F6B66', '#8B5E34'];
+
 export default function Atlas() {
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16">
-      <p className="specimen-index mb-3">Atlas</p>
+    <div className="max-w-6xl mx-auto px-6 py-16">
+      <p className="eyebrow mb-2">Atlas</p>
       <h1 className="font-display text-4xl text-ink mb-3">
         Medicinal Plant Atlas
       </h1>
@@ -14,32 +16,34 @@ export default function Atlas() {
         recorded on campus signage — phytochemical, molecular-target, and
         clinical-evidence data will be added as faculty verify each entry.
       </p>
-      <p className="font-body text-sm text-clay mb-12 max-w-prose border-l-2 border-clay pl-4">
+      <p className="font-body text-sm text-clay mb-12 max-w-prose">
         Evidence status: traditional/folk use only, not yet independently
-        verified against primary literature. This will be graded per-claim
-        (experimentally demonstrated / proposed / hypothesized / not
-        established) as the Centre&apos;s research database grows.
+        verified against primary literature.
       </p>
 
-      <div className="grid sm:grid-cols-2 gap-x-10 gap-y-10">
-        {plants.map((plant) => (
-          <Link
-            key={plant.slug}
-            href={`/atlas/${plant.slug}`}
-            className="hairline pt-5 block hover:bg-ink/[0.02] transition-colors -mx-2 px-2"
-          >
-            <p className="specimen-index mb-1">{plant.family}</p>
-            <h2 className="font-display text-xl text-ink italic">
-              {plant.scientificName}
-            </h2>
-            <p className="font-body text-sm text-ink/70 mt-1">
-              {plant.commonName}
-            </p>
-            <p className="font-body text-xs text-moss mt-2">
-              {plant.location}
-            </p>
-          </Link>
-        ))}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        {plants.map((plant, i) => {
+          const color = colors[i % colors.length];
+          return (
+            <Link key={plant.slug} href={`/atlas/${plant.slug}`} className="plant-card block">
+              {plant.photo ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={plant.photo} alt={plant.scientificName} className="w-full h-full object-cover" />
+              ) : (
+                <div
+                  className="plant-bg"
+                  style={{ background: `linear-gradient(135deg, ${color}22, ${color}44)`, color }}
+                >
+                  {plant.commonName.charAt(0)}
+                </div>
+              )}
+              <div className="plant-overlay">
+                <p className="plant-name">{plant.commonName}</p>
+                <p className="plant-sci">{plant.scientificName}</p>
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

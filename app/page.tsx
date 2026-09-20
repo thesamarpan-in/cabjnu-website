@@ -1,123 +1,203 @@
 import Link from 'next/link';
+import {
+  Leaf, Dna, FlaskConical, Cpu, ArrowRight,
+} from 'lucide-react';
 import { researchAreas } from '@/lib/content/research-areas';
 import { plants } from '@/lib/content/plants';
-import ResearchNetworkDiagram from '@/components/ResearchNetworkDiagram';
+import HomeQuiz from '@/components/HomeQuiz';
+import CommentsSection from '@/components/CommentsSection';
+
+// Colored icon badges for the highlight row — matches the reference
+// site's varied-color "Research Highlights" cards. Cycled across our
+// real 7 research areas (only first 4 shown here; full list on
+// /research-areas).
+const highlightAreas = [
+  { area: researchAreas[0], color: '#4A5D4F', icon: Leaf },
+  { area: researchAreas[1], color: '#3A4A6B', icon: Dna },
+  { area: researchAreas[2], color: '#C5A059', icon: FlaskConical },
+  { area: researchAreas[6], color: '#6B4A85', icon: Cpu },
+];
 
 export default function Home() {
   return (
-    <div className="max-w-5xl mx-auto px-6">
-      {/* Hero — specimen-label treatment, not a stat block */}
-      <section className="pt-16 pb-14">
-        <p className="specimen-index mb-3">Est. — JNU School of Life Sciences</p>
-        <h1 className="font-display text-5xl sm:text-6xl leading-[1.05] text-ink max-w-3xl">
-          Bridging traditional wisdom with molecular biology.
-        </h1>
-        <p className="font-body text-lg text-ink/80 mt-6 max-w-xl">
-          The Centre for Ayurveda Biology studies medicinal plants, their
-          phytochemistry, and their mechanisms — reading classical Ayurvedic
-          properties alongside modern biological evidence, not in place of it.
-        </p>
-        <div className="flex gap-6 mt-8">
-          <Link
-            href="/research-areas"
-            className="font-body text-sm text-paper bg-moss px-5 py-2.5 hover:bg-moss-dark transition-colors"
-          >
-            Explore research areas
-          </Link>
-          <Link
-            href="/about"
-            className="font-body text-sm text-ink self-center hover:text-moss transition-colors"
-          >
-            About the Centre
-          </Link>
+    <>
+      {/* HERO — real JNU campus photo, dark overlay, centered text */}
+      <header className="relative w-full overflow-hidden flex items-end justify-center" style={{ height: '88vh' }}>
+        <img
+          src="/images/campus/school-sanskrit-indic-studies.jpg"
+          alt="Jawaharlal Nehru University campus"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(to bottom, rgba(0,0,0,.25) 0%, rgba(0,0,0,.35) 55%, rgba(28,28,28,.55) 100%)',
+          }}
+        />
+        <div className="relative z-10 text-center text-white px-4 pb-16 max-w-3xl">
+          <p className="font-display italic text-lg md:text-xl mb-4 text-white/90">
+            Bridging Ayurvedic Wisdom with Modern Biological Science
+          </p>
+          <h1 className="font-display font-light text-5xl md:text-7xl mb-6 leading-none">
+            Centre for
+            <br />
+            Ayurveda Biology
+          </h1>
+          <p className="font-body text-xs md:text-sm tracking-[0.2em] uppercase text-white/70 mb-8">
+            Ayurveda &middot; Plant Biology &middot; Biotechnology &middot; Research &middot; JNU
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link href="/about" className="border border-white/60 px-6 py-3 text-[11px] uppercase tracking-widest hover:bg-white hover:text-ink transition-colors">
+              About CAB-JNU
+            </Link>
+            <Link href="/atlas" className="border border-white/60 px-6 py-3 text-[11px] uppercase tracking-widest hover:bg-white hover:text-ink transition-colors">
+              Browse Plants
+            </Link>
+            <a href="#quiz" className="bg-clay hover:bg-clay-dark px-6 py-3 text-[11px] uppercase tracking-widest transition-colors">
+              Take the Quiz
+            </a>
+          </div>
+        </div>
+      </header>
+
+      {/* GOLD-DIVIDER QUOTE SECTION */}
+      <section className="py-24 px-6 text-center">
+        <div className="max-w-2xl mx-auto">
+          <div className="divider-gold mb-6" />
+          <h2 className="font-display text-3xl md:text-4xl mb-4 text-ink">
+            A Home for Ayurveda Biology
+          </h2>
+          <div className="ornament">
+            <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+          </div>
+          <p className="font-display italic text-lg md:text-xl mb-6 text-gold">
+            &ldquo;Where classical Ayurvedic wisdom meets rigorous biological evidence.&rdquo;
+          </p>
+          <p className="font-body text-sm md:text-base leading-loose mb-4 text-ink/60">
+            [ Placeholder — the Centre&apos;s founding history, its place
+            within the School of Life Sciences, and its academic
+            philosophy go here, pending faculty content. ]
+          </p>
+          <p className="font-display italic text-sm text-ink/60">
+            Tradition studied rigorously. Evidence graded honestly.
+            Discovery shared openly.
+          </p>
         </div>
       </section>
 
-      {/* 01 — Medicinal Plant Atlas teaser */}
-      <section className="hairline pt-10 pb-14">
-        <div className="grid grid-cols-[3rem_1fr] gap-x-6">
-          <p className="specimen-index">01</p>
+      {/* EXPLORE BY TOPIC — plant grid */}
+      <section id="atlas" className="py-16 px-6 bg-paper2">
+        <div className="max-w-6xl mx-auto">
+          <p className="eyebrow text-center mb-3">Explore by Topic</p>
+          <h2 className="font-display text-3xl md:text-4xl text-center mb-10 text-ink">
+            Everything we study, with one purpose:{' '}
+            <span style={{ color: '#4A5D4F' }}>evidence-based Ayurveda.</span>
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+            {plants.map((plant, i) => {
+              const colors = ['#4A5D4F', '#3A4A6B', '#C5A059', '#6B4A85', '#D95D39', '#2F6B66', '#8B5E34'];
+              const color = colors[i % colors.length];
+              return (
+                <Link key={plant.slug} href={`/atlas/${plant.slug}`} className="plant-card block">
+                  {plant.photo ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={plant.photo} alt={plant.scientificName} className="w-full h-full object-cover" />
+                  ) : (
+                    <div
+                      className="plant-bg"
+                      style={{ background: `linear-gradient(135deg, ${color}22, ${color}44)`, color }}
+                    >
+                      {plant.commonName.charAt(0)}
+                    </div>
+                  )}
+                  <div className="plant-overlay">
+                    <p className="plant-name">{plant.commonName}</p>
+                    <p className="plant-sci">{plant.family}</p>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* RESEARCH HIGHLIGHTS — colored icon-badge cards */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_2fr] gap-8 items-start">
           <div>
-            <h2 className="font-display text-2xl text-ink mb-2">
-              Medicinal Plant Atlas
+            <p className="eyebrow mb-2">Research Areas</p>
+            <h2 className="font-display text-3xl md:text-4xl leading-tight text-ink">
+              Tradition. Biology.
+              <br />
+              Discovery.
             </h2>
-            <p className="font-body text-sm text-ink/70 max-w-md mb-4">
-              A pilot record of {plants.length} medicinal plants documented
-              on the JNU campus — traditional use, botanical family, and
-              campus location for each, with scientific evidence to be
-              added as the Centre&apos;s database grows.
+            <p className="font-body text-sm mt-3 text-ink/60">
+              Bridging classical Ayurvedic concepts with modern biological
+              methods across {researchAreas.length} research areas.
             </p>
             <Link
-              href="/atlas"
-              className="font-body text-sm text-moss hover:text-moss-dark transition-colors"
+              href="/research-areas"
+              className="font-body text-xs font-bold uppercase tracking-widest text-clay inline-flex items-center gap-1 mt-4"
             >
-              Explore the Atlas
+              View all areas <ArrowRight size={13} />
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* 02 — Research network (conceptual diagram, not the real graph) */}
-      <section className="hairline pt-10 pb-14">
-        <div className="grid grid-cols-[3rem_1fr] gap-x-6">
-          <p className="specimen-index">02</p>
-          <div>
-            <h2 className="font-display text-2xl text-ink mb-2">
-              How the Centre studies a plant
-            </h2>
-            <p className="font-body text-sm text-ink/70 max-w-md mb-6">
-              A conceptual view of the research chain — the actual,
-              data-driven version of this will grow as the Centre&apos;s
-              database is populated with verified evidence.
-            </p>
-            <ResearchNetworkDiagram />
-          </div>
-        </div>
-      </section>
-
-      {/* 03 — Research Areas */}
-      <section className="hairline pt-10 pb-14">
-        <div className="grid grid-cols-[3rem_1fr] gap-x-6">
-          <p className="specimen-index">03</p>
-          <div>
-            <h2 className="font-display text-2xl text-ink mb-6">
-              Research Areas
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-x-10 gap-y-6">
-              {researchAreas.map((area) => (
-                <div key={area.slug}>
-                  <h3 className="font-body font-medium text-ink">
-                    {area.name}
-                  </h3>
-                  <p className="font-body text-sm text-ink/70 mt-1">
-                    {area.description}
-                  </p>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {highlightAreas.map(({ area, color, icon: Icon }) => (
+              <div key={area.slug} className="highlight-card">
+                <div className="highlight-icon" style={{ backgroundColor: `${color}1a`, color }}>
+                  <Icon size={18} strokeWidth={1.75} />
                 </div>
-              ))}
-            </div>
+                <h3 className="font-display text-lg mb-1 text-ink">{area.name}</h3>
+                <p className="font-body text-xs mb-3 text-ink/60">{area.description}</p>
+                <Link
+                  href="/research-areas"
+                  className="font-body text-xs font-bold uppercase tracking-widest"
+                  style={{ color }}
+                >
+                  View All &rarr;
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 04 — Faculty preview */}
-      <section className="hairline pt-10 pb-16">
-        <div className="grid grid-cols-[3rem_1fr] gap-x-6">
-          <p className="specimen-index">04</p>
-          <div>
-            <h2 className="font-display text-2xl text-ink mb-3">Faculty</h2>
-            <p className="font-body text-sm text-ink/70 max-w-md mb-4">
-              Directory entries are added once each faculty member confirms
-              their bio, research areas, and publication links.
-            </p>
-            <Link
-              href="/faculty"
-              className="font-body text-sm text-moss hover:text-moss-dark transition-colors"
-            >
-              View the Faculty Directory
-            </Link>
+      {/* QUIZ */}
+      <section id="quiz" className="py-20 px-6 bg-paper2">
+        <div className="max-w-md mx-auto text-center">
+          <p className="eyebrow mb-2">Test Yourself</p>
+          <h2 className="font-display text-3xl mb-6 text-ink">Quick Quiz</h2>
+          <HomeQuiz />
+        </div>
+      </section>
+
+      {/* FACULTY PREVIEW */}
+      <section className="py-16 px-6">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="eyebrow mb-2">People</p>
+          <h2 className="font-display text-3xl mb-3 text-ink">Faculty</h2>
+          <p className="font-body text-sm text-ink/60 mb-4">
+            Directory entries are added once each faculty member confirms
+            their bio, research areas, and publication links.
+          </p>
+          <Link href="/faculty" className="font-body text-xs font-bold uppercase tracking-widest text-clay inline-flex items-center gap-1">
+            View the Faculty Directory <ArrowRight size={13} />
+          </Link>
+        </div>
+      </section>
+
+      {/* COMMENTS */}
+      <section className="py-20 px-6 bg-paper2">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="eyebrow mb-2">Your Voice</p>
+          <h2 className="font-display text-3xl mb-8 text-ink">Comments &amp; Feedback</h2>
+          <div className="text-left">
+            <CommentsSection />
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }

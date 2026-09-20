@@ -5,22 +5,29 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Matches Samarpan's actual production palette exactly (from
+        // their live index.html :root CSS variables) — light cream,
+        // near-black text, clay orange + gold accents. No green.
         ink: '#1C1C1C',
-        paper: '#FAF7F1',
-        moss: {
-          DEFAULT: '#8A9A7E',
-          dark: '#6E7D64',
-        },
+        paper: '#FDFBF7',
+        paper2: '#F9F7F4',
+        line: '#e8e4de',
+        textMuted: '#666666',
         clay: {
           DEFAULT: '#D95D39',
-        },
-        indigo: {
-          DEFAULT: '#3A4A52',
+          dark: '#B84A2C',
         },
         gold: {
-          DEFAULT: '#C9A227',
+          DEFAULT: '#C5A059',
         },
-        line: '#D9D2C4',
+        blush: '#F6ECE4', // soft warm tint for icon badges / quote blocks
+        // Kept for the evidence-status tag system (Ayurvedic-property vs
+        // molecular-target claims still need two distinguishable accents
+        // beyond clay/gold) — a neutral slate, used sparingly, not as a
+        // structural color.
+        slate: {
+          DEFAULT: '#5B6068',
+        },
       },
       fontFamily: {
         display: ['var(--font-cormorant)', 'Georgia', 'serif'],

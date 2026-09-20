@@ -48,55 +48,67 @@ that should be replaced with real content. Leave the surrounding code
 (anything starting with `<` or `{`) untouched — only change the plain
 English text between the tags.
 
-## Adding a medicinal plant
+## Adding a medicinal plant (via Google Sheet — no code needed)
 
-Plants currently live in `lib/content/plants.ts` (a plain data file, not
-a live database yet — this keeps the Atlas fast and reliable before
-Ayurveda Day). To add one, open that file on GitHub and copy this block
-inside the square brackets:
+Plant data now lives in a Google Sheet that anyone the Centre trusts can
+edit, with no GitHub or coding knowledge required.
 
-```
-{
-  slug: 'plant-scientific-name',
-  commonName: 'Common Name',
-  scientificName: 'Genus species',
-  family: 'Family name',
-  location: 'Real location on JNU campus',
-  traditionalUse: {
-    en: 'English description, hedged as "traditionally used for..." — never a flat cure claim.',
-    hi: 'Hindi translation.',
-    sa: 'Sanskrit translation — mark as unreviewed if you are not confident in it.',
-  },
-},
-```
+### One-time setup (do this once)
 
-Two options for translating `hi`/`sa`:
-- Ask Claude to draft them (as done for the first 10 plants) — but treat
-  the Sanskrit especially as a first draft needing review, since modern
-  biomedical terms (blood sugar, cholesterol, antioxidant) have no
-  classical equivalent.
-- Write them yourself if you're confident in the terminology.
+1. Create a Google Sheet. Import `data-templates/plants-template.csv`
+   (File -> Import -> Upload) to start with the current 10 plants
+   already filled in as a reference.
+2. Columns, left to right: `slug`, `commonName`, `scientificName`,
+   `family`, `location`, `photo`, `traditionalUseEn`,
+   `traditionalUseHi`, `traditionalUseSa`.
+   - `slug` can be left blank for new rows — it auto-generates from
+     `scientificName` (e.g. "Ocimum sanctum" -> `ocimum-sanctum`).
+   - `photo` stays blank until a real photo exists at
+     `public/images/plants/<slug>.jpg` in the repo.
+   - `traditionalUseHi`/`traditionalUseSa` can be left blank if no
+     translation is ready yet — ask Claude to draft them, but treat
+     Sanskrit especially as unreviewed until checked.
+3. File -> Share -> Publish to web -> select the sheet -> format
+   **Comma-separated values (.csv)** -> Publish. Copy the URL it gives
+   you.
+4. In the GitHub repo: Settings -> Secrets and variables -> Actions ->
+   New repository secret -> name it `PLANTS_SHEET_CSV_URL`, paste the
+   URL.
+5. Also add it to your own `.env.local` (see `.env.example`) if you
+   want to test sheet changes locally before they go live.
 
-**Adding a photo:** put a real photo of the actual specimen at
-`public/images/plants/<slug>.jpg` (matching the plant's `slug` exactly)
-and add `photo: '/images/plants/<slug>.jpg'` to its entry. Until a real
-photo exists, leave `photo` unset — the page shows a clean "photo not
-yet added" placeholder rather than a stock or AI-generated image, since
-this is meant to be a record of the actual campus specimen.
+### Adding or editing a plant (the normal, ongoing workflow)
 
-**QR codes are automatic** — the build script
-(`scripts/generate-qr.js`) reads plant slugs and generates a QR PNG for
-every plant at build time. When you add a plant to `plants.ts`, also
-add its `slug` to the `slugs` array at the top of
-`scripts/generate-qr.js` (the script can't read the `.ts` file
-directly) — then commit and push; the next deploy generates its QR
-automatically.
+1. Open the Google Sheet, add a new row or edit an existing one.
+2. That's it — no commit, no push. The site rebuilds automatically once
+   a day (see `.github/workflows/deploy.yml`'s schedule) and picks up
+   whatever is in the sheet at that time.
+3. Want it live sooner? In the GitHub repo's **Actions** tab, open
+   "Deploy to GitHub Pages" and click **Run workflow** to trigger an
+   immediate rebuild.
 
-Every phytochemical, molecular target, or disease claim beyond
-traditional/folk use should ideally trace to a row in `research_papers`
-(with a real DOI or PubMed ID) in Supabase, once that's populated —
-not typed in as free text with no source.
+### Safety net
 
-**If you'd rather not edit files yourself:** send the plant's name,
-family, campus location, and traditional-use description in a message,
-and it can be added and a ready-to-push update prepared for you instead.
+`scripts/sync-plants.js` never lets a sheet mistake take the whole site
+down: a blank required field skips just that row (logged in the Actions
+build log), and if the sheet is unreachable or empty entirely, the
+previous good data in `data/plants.json` is kept unchanged instead of
+wiping the Atlas. Check the Actions log after adding a plant if it
+doesn't show up — it'll say exactly which row/field was the problem.
+
+**Important:** only add real, verified information. Every phytochemical,
+molecular target, or disease claim beyond traditional/folk use should
+ideally trace to a row in `research_papers` (with a real DOI or PubMed
+ID) in Supabase, once that's populated — not typed into the sheet as
+free text with no source.
+
+### Fallback: editing data/plants.json directly
+
+If the sheet isn't set up yet, `data/plants.json` can still be edited
+directly on GitHub (same shape as the CSV columns, just as JSON). This
+is what `sync-plants.js` overwrites once the sheet is live, so treat it
+as temporary until the sheet takes over.
+
+**If you'd rather not touch any of this yourself:** send the plant's
+name, family, campus location, and traditional-use description in a
+message, and it can be added to the sheet (or `plants.json`) for you.

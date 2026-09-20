@@ -4,10 +4,10 @@
 // Plant -> Compound -> Target -> Pathway -> Biological Effect.
 export default function ResearchNetworkDiagram() {
   const nodes = [
-    { label: 'Plant', color: '#8A9A7E' },      // sage — biological
-    { label: 'Compound', color: '#8A9A7E' },   // sage — biological
-    { label: 'Molecular Target', color: '#3A4A52' }, // slate — molecular
-    { label: 'Pathway', color: '#3A4A52' },    // slate — molecular
+    { label: 'Plant', color: '#C5A059' },      // gold — biological
+    { label: 'Compound', color: '#C5A059' },   // gold — biological
+    { label: 'Molecular Target', color: '#5B6068' }, // slate — molecular
+    { label: 'Pathway', color: '#5B6068' },    // slate — molecular
     { label: 'Biological Effect', color: '#D95D39' }, // clay — outcome
   ];
 

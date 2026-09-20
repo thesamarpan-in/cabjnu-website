@@ -1,17 +1,14 @@
 export default function About() {
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16">
-      <p className="specimen-index mb-3">About</p>
+    <div className="max-w-6xl mx-auto px-6 py-16">
+      <p className="eyebrow mb-2">About</p>
       <h1 className="font-display text-4xl text-ink mb-8">
         Centre for Ayurveda Biology
       </h1>
 
-      <div className="grid sm:grid-cols-[3fr_2fr] gap-10">
-        <div className="prose-content max-w-prose">
-          <h2 className="font-display text-xl text-ink mb-3">
-            {/* TODO: replace with the Centre's actual founding history */}
-            History
-          </h2>
+      <div className="grid sm:grid-cols-[3fr_2fr] gap-8">
+        <div className="feature-card max-w-prose">
+          <h2 className="font-display text-xl text-ink mb-3">History</h2>
           <p className="font-body text-ink/80 mb-8">
             [ Placeholder — add the Centre&apos;s founding history, its place
             within the School of Life Sciences, and how it came to bridge
@@ -45,8 +42,8 @@ export default function About() {
           </p>
         </div>
 
-        <aside className="hairline pt-6 sm:pt-0 sm:border-t-0 sm:border-l sm:pl-8 border-line">
-          <p className="specimen-index mb-2">Note for editors</p>
+        <aside className="feature-card h-fit">
+          <p className="eyebrow mb-2">Note for editors</p>
           <p className="font-body text-sm text-ink/60">
             Every bracketed placeholder on this page needs real content from
             the Centre before this site goes live publicly. See{' '}

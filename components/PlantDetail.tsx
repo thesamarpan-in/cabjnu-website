@@ -20,16 +20,16 @@ export default function PlantDetail({ plant }: { plant: Plant }) {
       {/* Photo — shows a clean placeholder until a real photo is provided.
           Never a stock/AI image on an official record of a specific
           campus specimen. */}
-      <div className="hairline mt-8 pt-6">
+      <div className="feature-card mt-8">
         {plant.photo && !imgError ? (
           <img
             src={plant.photo}
             alt={`${plant.scientificName} at ${plant.location}`}
-            className="w-full max-w-md h-auto border border-line"
+            className="w-full max-w-md h-auto rounded-xl"
             onError={() => setImgError(true)}
           />
         ) : (
-          <div className="w-full max-w-md aspect-[4/3] border border-line flex items-center justify-center bg-ink/[0.03]">
+          <div className="w-full max-w-md aspect-[4/3] rounded-xl border border-line flex items-center justify-center bg-ink/[0.03]">
             <p className="font-body text-sm text-ink/40 text-center px-6">
               Photo not yet added.
               <br />
@@ -45,10 +45,10 @@ export default function PlantDetail({ plant }: { plant: Plant }) {
           <button
             key={l}
             onClick={() => setLang(l)}
-            className={`font-body text-sm px-3 py-1.5 border transition-colors ${
+            className={`font-body text-sm px-4 py-2 rounded-full border transition-colors ${
               lang === l
-                ? 'bg-moss text-paper border-moss'
-                : 'border-line text-ink/70 hover:border-moss'
+                ? 'bg-clay text-white border-clay'
+                : 'border-line text-ink/70 hover:border-clay'
             }`}
           >
             {langLabels[l]}
@@ -56,11 +56,11 @@ export default function PlantDetail({ plant }: { plant: Plant }) {
         ))}
       </div>
 
-      <div className="hairline mt-4 pt-6 grid sm:grid-cols-[8rem_1fr] gap-y-4 gap-x-4">
-        <p className="specimen-index">Location</p>
+      <div className="feature-card mt-4 grid sm:grid-cols-[8rem_1fr] gap-y-4 gap-x-4">
+        <p className="eyebrow">Location</p>
         <p className="font-body text-ink/80">{plant.location}</p>
 
-        <p className="specimen-index">Traditional use</p>
+        <p className="eyebrow">Traditional use</p>
         <p
           className="font-body text-ink/80"
           lang={lang}

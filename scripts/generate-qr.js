@@ -8,36 +8,22 @@ const QRCode = require('qrcode');
 // Must match public/CNAME.
 const SITE_URL = 'https://ayurveda.thesamarpan.co.in';
 
-// Importing the .ts content file directly from a plain Node script isn't
-// straightforward without a TS loader, so this script re-reads the same
-// slugs from a tiny JSON mirror kept in sync with lib/content/plants.ts.
-// If you add a plant, add its slug here too.
-const slugs = [
-  'opuntia-ficus-indica',
-  'justicia-adhatoda',
-  'costus-igneus',
-  'coleus-scutellarioides',
-  'citrus-limon',
-  'moringa-oleifera',
-  'hamelia-patens',
-  'cassia-fistula',
-  'dianthus-praecox',
-  'canna-indica',
-];
-
 async function main() {
+  const dataPath = path.join(__dirname, '..', 'data', 'plants.json');
+  const plants = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
+
   const outDir = path.join(__dirname, '..', 'public', 'qr');
   fs.mkdirSync(outDir, { recursive: true });
 
-  for (const slug of slugs) {
-    const url = `${SITE_URL}/atlas/${slug}`;
-    const outPath = path.join(outDir, `${slug}.png`);
+  for (const plant of plants) {
+    const url = `${SITE_URL}/atlas/${plant.slug}`;
+    const outPath = path.join(outDir, `${plant.slug}.png`);
     await QRCode.toFile(outPath, url, {
       width: 512,
       margin: 2,
-      color: { dark: '#1E2A22', light: '#F1EEE2' },
+      color: { dark: '#122A1E', light: '#FAF7F1' },
     });
-    console.log(`QR generated: ${slug}.png -> ${url}`);
+    console.log(`QR generated: ${plant.slug}.png -> ${url}`);
   }
 }
 

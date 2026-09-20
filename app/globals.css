@@ -8,13 +8,28 @@
   }
 
   body {
-    background-color: #FAF7F1;
+    background-color: #FDFBF7;
     color: #1C1C1C;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Subtle grain texture overlay — same technique as Samarpan's
+     production site (thesamarpan.co.in), a fixed fractal-noise SVG at
+     very low opacity for tactile paper-like polish. */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9990;
+    opacity: 0.45;
   }
 
   /* Visible keyboard focus everywhere — never remove this outline */
   :focus-visible {
-    outline: 2px solid #8A9A7E;
+    outline: 2px solid #D95D39;
     outline-offset: 2px;
   }
 
@@ -30,34 +45,154 @@
 }
 
 @layer components {
-  /* The specimen-sheet section index: a small eyebrow label sitting in
-     the left rail, paired with a hairline that runs the width of the page —
-     styled to match Samarpan's small-caps eyebrow-label treatment. */
-  .specimen-index {
+  #scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #D95D39, #C5A059);
+    z-index: 10000;
+    transition: width 0.1s linear;
+  }
+
+  .eyebrow {
     font-family: var(--font-marcellus);
-    font-size: 0.8125rem;
-    letter-spacing: 0.04em;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #8A9A7E;
-    font-weight: 400;
+    color: #D95D39;
   }
 
   .hairline {
-    border-top: 1px solid #D9D2C4;
+    border-top: 1px solid #e8e4de;
   }
 
-  /* Taxonomic tag styles — colors carry meaning throughout the site:
-     moss/sage = biological/plant, clay = Ayurvedic property, indigo = molecular */
+  /* Evidence-status tag styles — clay = Ayurvedic/traditional property,
+     gold = a verified/highlighted claim, slate = molecular/target claim.
+     Kept to Samarpan's actual accent palette plus one neutral. */
   .tag-bio {
-    color: #4F5C46;
-    background-color: rgba(138, 154, 126, 0.14);
+    color: #8a6a1f;
+    background-color: rgba(197, 160, 89, 0.16);
   }
   .tag-ayurvedic {
     color: #9c4a2c;
     background-color: rgba(217, 93, 57, 0.12);
   }
   .tag-molecular {
-    color: #3A4A52;
-    background-color: rgba(58, 74, 82, 0.1);
+    color: #5B6068;
+    background-color: rgba(91, 96, 104, 0.1);
+  }
+
+  .feature-card {
+    background-color: #ffffff;
+    border: 1px solid #e8e4de;
+    border-radius: 1rem;
+    padding: 1.75rem;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .feature-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+    transform: translateY(-2px);
+  }
+
+  .icon-badge {
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 9999px;
+    background-color: #F6ECE4;
+    color: #D95D39;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Gold divider + ornament — matches the reference site's "Sanctuary"
+     section treatment */
+  .divider-gold {
+    width: 1px;
+    height: 56px;
+    background: linear-gradient(to bottom, transparent, #C5A059, transparent);
+    margin: 0 auto;
+  }
+
+  .ornament {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: center;
+    margin: 1.5rem 0;
+  }
+  .ornament::before,
+  .ornament::after {
+    content: '';
+    flex: 1;
+    max-width: 90px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #C5A059);
+  }
+  .ornament::after {
+    background: linear-gradient(to left, transparent, #C5A059);
+  }
+
+  /* Plant grid cards — image/color-block with bottom overlay caption,
+     matches the reference's "Explore Our Ecosystem" photo row */
+  .plant-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    height: 220px;
+  }
+  .plant-card .plant-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, transparent 55%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0.9rem;
+  }
+  .plant-card .plant-name {
+    color: #fff;
+    font-family: var(--font-cormorant);
+    font-size: 1.05rem;
+    line-height: 1.15;
+  }
+  .plant-card .plant-sci {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 2px;
+  }
+  .plant-bg {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-cormorant);
+    font-size: 2.5rem;
+  }
+
+  /* Research-area highlight cards — colored icon badges + "View All",
+     matches the reference's "Research Highlights" row */
+  .highlight-card {
+    background: #ffffff;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .highlight-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  }
+  .highlight-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
   }
 }

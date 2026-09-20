@@ -13,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/research-areas',
     '/atlas',
     '/faculty',
+    '/resources',
+    '/news',
     '/ayurveda-day',
   ].map((route) => ({
     url: `${SITE_URL}${route}`,

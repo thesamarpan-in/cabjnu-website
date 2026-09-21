@@ -8,7 +8,6 @@ const leftLinks = [
 
 const rightLinksBeforeCta = [
   { href: '/atlas', label: 'Plants' },
-  { href: '/faculty', label: 'People' },
 ];
 
 export default function Nav() {

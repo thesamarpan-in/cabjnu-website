@@ -74,11 +74,6 @@ export default function Home() {
           <p className="font-display italic text-lg md:text-xl mb-6 text-gold">
             &ldquo;Where classical Ayurvedic wisdom meets rigorous biological evidence.&rdquo;
           </p>
-          <p className="font-body text-sm md:text-base leading-loose mb-4 text-ink/60">
-            [ Placeholder — the Centre&apos;s founding history, its place
-            within the School of Life Sciences, and its academic
-            philosophy go here, pending faculty content. ]
-          </p>
           <p className="font-display italic text-sm text-ink/60">
             Tradition studied rigorously. Evidence graded honestly.
             Discovery shared openly.
@@ -170,21 +165,6 @@ export default function Home() {
           <p className="eyebrow mb-2">Test Yourself</p>
           <h2 className="font-display text-3xl mb-6 text-ink">Quick Quiz</h2>
           <HomeQuiz />
-        </div>
-      </section>
-
-      {/* FACULTY PREVIEW */}
-      <section className="py-16 px-6">
-        <div className="max-w-2xl mx-auto text-center">
-          <p className="eyebrow mb-2">People</p>
-          <h2 className="font-display text-3xl mb-3 text-ink">Faculty</h2>
-          <p className="font-body text-sm text-ink/60 mb-4">
-            Directory entries are added once each faculty member confirms
-            their bio, research areas, and publication links.
-          </p>
-          <Link href="/faculty" className="font-body text-xs font-bold uppercase tracking-widest text-clay inline-flex items-center gap-1">
-            View the Faculty Directory <ArrowRight size={13} />
-          </Link>
         </div>
       </section>
 

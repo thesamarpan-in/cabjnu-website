@@ -8,13 +8,6 @@ export default function About() {
 
       <div className="grid sm:grid-cols-[3fr_2fr] gap-8">
         <div className="feature-card max-w-prose">
-          <h2 className="font-display text-xl text-ink mb-3">History</h2>
-          <p className="font-body text-ink/80 mb-8">
-            [ Placeholder — add the Centre&apos;s founding history, its place
-            within the School of Life Sciences, and how it came to bridge
-            Ayurveda and molecular biology. ]
-          </p>
-
           <h2 className="font-display text-xl text-ink mb-3">Objectives</h2>
           <ul className="font-body text-ink/80 space-y-2 mb-8 list-none">
             <li>
@@ -45,8 +38,7 @@ export default function About() {
         <aside className="feature-card h-fit">
           <p className="eyebrow mb-2">Note for editors</p>
           <p className="font-body text-sm text-ink/60">
-            Every bracketed placeholder on this page needs real content from
-            the Centre before this site goes live publicly. See{' '}
+            The Objectives list above is still placeholder text. See{' '}
             <code className="text-xs">docs/data-entry-guide.md</code> in the
             repository for how to edit this without touching code.
           </p>

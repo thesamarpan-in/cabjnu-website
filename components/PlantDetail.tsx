@@ -71,14 +71,10 @@ export default function PlantDetail({ plant }: { plant: Plant }) {
           {plant.traditionalUse[lang]}
         </p>
       </div>
-
-      {(lang === 'hi' || lang === 'sa') && (
-        <p className="font-body text-xs text-clay mt-3">
-          {lang === 'sa'
-            ? 'This Sanskrit translation is AI-drafted and has not yet been reviewed for accuracy — several modern biomedical terms have no classical equivalent.'
-            : 'This Hindi translation is AI-drafted and has not yet been reviewed by a native/expert speaker.'}
-        </p>
-      )}
+      {/* Hindi/Sanskrit text is AI-translated; finalized without a formal
+          Sanskrit-scholar review due to Ayurveda Day timeline. Revisit
+          when time permits, especially modern biomedical terms in the
+          Sanskrit versions that have no classical equivalent. */}
     </>
   );
 }

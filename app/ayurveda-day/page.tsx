@@ -41,7 +41,7 @@ export default function AyurvedaDay() {
         </h2>
         <div className="space-y-4">
           {[
-            { status: 'Live', tag: 'tag-bio', text: 'Centre website — About, Research Areas, Faculty Directory' },
+            { status: 'Live', tag: 'tag-bio', text: 'Centre website — About, Research Areas, Medicinal Plant Atlas' },
             { status: 'Live', tag: 'tag-bio', text: 'Research database schema with an evidence-status framework built in from the start' },
             { status: 'Live — pilot', tag: 'tag-bio', text: `Medicinal Plant Atlas — ${plants.length} plants documented on the JNU campus, each with a QR code linking to its page` },
             { status: 'In progress', tag: 'tag-ayurvedic', text: 'Verified phytochemical, molecular-target, and citation data for each Atlas entry' },

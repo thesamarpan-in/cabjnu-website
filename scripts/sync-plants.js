@@ -105,9 +105,20 @@ async function main() {
       family: row.family.trim(),
       location: row.location.trim(),
       photo: (row.photo || '').trim(),
+      latitude: row.latitude ? parseFloat(row.latitude) : undefined,
+      longitude: row.longitude ? parseFloat(row.longitude) : undefined,
       traditionalUseEn: row.traditionalUseEn.trim(),
       traditionalUseHi: (row.traditionalUseHi || '').trim(),
       traditionalUseSa: (row.traditionalUseSa || '').trim(),
+      evidenceNote: (row.evidenceNote || '').trim() || undefined,
+      evidenceStatus: (row.evidenceStatus || '').trim() || undefined,
+      evidenceModel: (row.evidenceModel || '').trim() || undefined,
+      citationAuthors: (row.citationAuthors || '').trim() || undefined,
+      citationYear: row.citationYear ? parseInt(row.citationYear, 10) : undefined,
+      citationJournal: (row.citationJournal || '').trim() || undefined,
+      citationTitle: (row.citationTitle || '').trim() || undefined,
+      citationDoi: (row.citationDoi || '').trim() || undefined,
+      citationPmid: (row.citationPmid || '').trim() || undefined,
     });
   }
 

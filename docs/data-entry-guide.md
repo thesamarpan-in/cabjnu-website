@@ -1,45 +1,13 @@
 # Adding or editing content — no coding experience needed
 
-This guide is for faculty and students adding real content to the site.
-You do not need to understand Next.js or React to make these edits — you
-are only ever editing plain lists of information inside two files.
-
-## Adding a faculty profile
-
-1. Open `lib/content/faculty.ts` on GitHub (click the file, then the pencil
-   icon to edit).
-2. Copy this block and paste it inside the square brackets, after any
-   existing entries:
-
-   ```
-   {
-     slug: 'your-name-here',
-     name: 'Dr. Your Name',
-     designation: 'Associate Professor',
-     researchArea: 'molecular-ayurveda',
-     bio: 'One or two sentences, written or approved by you.',
-     scholarUrl: 'https://scholar.google.com/citations?user=...',
-   },
-   ```
-
-3. Fill in your own details. `researchArea` must match one of the slugs in
-   `lib/content/research-areas.ts` (e.g. `medicinal-plant-biology`,
-   `molecular-ayurveda`, `natural-product-discovery`,
-   `ayurveda-microbiology`, `yoga-neuroscience`, `integrative-medicine`,
-   `computational-ayurveda`).
-4. Commit the change with a message like "Add [Your Name] to faculty
-   directory." The site rebuilds and deploys automatically within a few
-   minutes.
-
-**Important:** only add your own entry, or an entry you have that
-person's explicit permission to publish. Do not add placeholder or
-invented names — see the comment at the top of `faculty.ts`.
+This guide is for students adding real content to the site. You do not
+need to understand Next.js or React to make these edits — you are only
+ever editing plain lists of information inside a few files.
 
 ## Editing research area descriptions
 
 Open `lib/content/research-areas.ts` and edit the `description` field for
-the relevant area. Do not change the `slug` value unless you also update
-every faculty entry that references it.
+the relevant area.
 
 ## Editing About page text
 

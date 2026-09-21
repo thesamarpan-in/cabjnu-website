@@ -25,7 +25,7 @@ export default function ResearchAreas() {
                 {area.description}
               </p>
               <p className="font-body text-xs text-ink/40 mt-4">
-                Faculty and active projects — to be added
+                Active projects — to be added
               </p>
             </div>
           );

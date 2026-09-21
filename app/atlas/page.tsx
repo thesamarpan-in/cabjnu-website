@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Leaf } from 'lucide-react';
 import { plants } from '@/lib/content/plants';
+import CampusMapLoader from '@/components/CampusMapLoader';
 
 const colors = ['#4A5D4F', '#3A4A6B', '#C5A059', '#6B4A85', '#D95D39', '#2F6B66', '#8B5E34'];
 
@@ -17,10 +18,20 @@ export default function Atlas() {
         recorded on campus signage — phytochemical, molecular-target, and
         clinical-evidence data will be added as faculty verify each entry.
       </p>
-      <p className="font-body text-sm text-clay mb-12 max-w-prose">
+      <p className="font-body text-sm text-clay mb-8 max-w-prose">
         Evidence status: traditional/folk use only, not yet independently
         verified against primary literature.
       </p>
+
+      <p className="eyebrow mb-3">Campus Map</p>
+      <p className="font-body text-sm text-ink/60 mb-4 max-w-prose">
+        Click a marker for directions to that location on campus.
+      </p>
+      <div className="mb-12">
+        <CampusMapLoader plants={plants} />
+      </div>
+
+      <p className="eyebrow mb-3">All Plants</p>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
         {plants.map((plant, i) => {

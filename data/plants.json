@@ -8,7 +8,17 @@
     "photo": "",
     "traditionalUseEn": "Traditionally used to help regulate blood sugar levels, support immunity and hydration, and manage cholesterol; regarded in folk use as having antioxidant properties.",
     "traditionalUseHi": "पारंपरिक रूप से रक्त शर्करा को नियंत्रित करने, प्रतिरक्षा और जलयोजन बढ़ाने, तथा कोलेस्ट्रॉल प्रबंधन में सहायक माना जाता है; लोक उपयोग में इसे एंटीऑक्सीडेंट गुणों वाला माना जाता है।",
-    "traditionalUseSa": "परम्परया रक्तशर्करा-नियमने, रोगप्रतिरोधशक्तिवर्धने, जलांशपोषणे, कोलेस्ट्रॉल-व्यवस्थापने च उपयुज्यते इति मन्यते।"
+    "traditionalUseSa": "परम्परया रक्तशर्करा-नियमने, रोगप्रतिरोधशक्तिवर्धने, जलांशपोषणे, कोलेस्ट्रॉल-व्यवस्थापने च उपयुज्यते इति मन्यते।",
+    "evidenceNote": "A 2022 comprehensive review confirms antioxidant, antidiabetic, and antihypercholesterolemic activity from the plant's phenolic and flavonoid content, and a 2026 rat study (oral glucose tolerance test, STZ-induced diabetes model) found measurable blood-glucose-lowering effects.",
+    "citationAuthors": "Abbas, E.Y., Ezzat, M.I., El Hefnawy, H.M., Abdel-Sattar, E.",
+    "citationYear": 2022,
+    "citationJournal": "Journal of Food Biochemistry",
+    "citationTitle": "An overview and update on the chemical composition and potential health benefits of Opuntia ficus-indica (L.) Miller",
+    "citationDoi": "10.1111/jfbc.14310",
+    "evidenceStatus": "experimentally_demonstrated",
+    "evidenceModel": "animal (rat) models",
+    "latitude": 28.5394,
+    "longitude": 77.1652
   },
   {
     "slug": "justicia-adhatoda",
@@ -19,7 +29,17 @@
     "photo": "",
     "traditionalUseEn": "Traditionally used for skin conditions, wounds, toothache, and acidity, and for cough, piles, constipation, jaundice, and gout. Regarded in folk use as a blood purifier, antiseptic, and anti-aging remedy, and traditionally used for colds, insect stings, inflammation, liver conditions, and as a skin tonic.",
     "traditionalUseHi": "पारंपरिक रूप से त्वचा रोग, घाव, दांत दर्द और अम्लता के लिए, तथा खांसी, बवासीर, कब्ज, पीलिया और गठिया में प्रयुक्त होता है। लोक उपयोग में इसे रक्त शोधक, प्रतिरोधी (एंटीसेप्टिक) और वृद्धावस्था-रोधी माना जाता है, तथा जुकाम, कीड़े के काटने, सूजन, यकृत रोग में और त्वचा टॉनिक के रूप में प्रयुक्त होता है।",
-    "traditionalUseSa": "परम्परया त्वग्रोगेषु, व्रणेषु, दन्तशूले, अम्लपित्ते, कासे, अर्शसि, विबन्धे, कामलायां, वातरक्ते च उपयुज्यते। रक्तशोधकत्वेन, व्रणरोपणे च लोकप्रयोगे मन्यते।"
+    "traditionalUseSa": "परम्परया त्वग्रोगेषु, व्रणेषु, दन्तशूले, अम्लपित्ते, कासे, अर्शसि, विबन्धे, कामलायां, वातरक्ते च उपयुज्यते। रक्तशोधकत्वेन, व्रणरोपणे च लोकप्रयोगे मन्यते।",
+    "evidenceNote": "A 2024 review identifies vasicine as the plant's principal alkaloid, with laboratory studies confirming bronchodilatory, antioxidant, and anti-inflammatory activity; a related compound derived from vasicine (bromhexine) has been used clinically as a mucolytic.",
+    "citationAuthors": "Kamran, R. et al.",
+    "citationYear": 2024,
+    "citationJournal": "Discover Plants",
+    "citationTitle": "Ethnopharmacological uses, phytochemistry, pharmacological activities and toxicity of Justicia adhatoda L.: a review",
+    "citationDoi": "10.1007/s44372-024-00042-x",
+    "evidenceStatus": "experimentally_demonstrated",
+    "evidenceModel": "in vitro and animal studies",
+    "latitude": 28.5406,
+    "longitude": 77.1682
   },
   {
     "slug": "costus-igneus",
@@ -30,7 +50,17 @@
     "photo": "",
     "traditionalUseEn": "Leaves are traditionally consumed by some people with diabetes, with self-reported reductions in blood glucose levels — this is a folk/anecdotal use, not a clinically established effect. Also traditionally used for rashes, fever, bronchitis, and intestinal worms.",
     "traditionalUseHi": "मधुमेह से पीड़ित कुछ लोग परंपरागत रूप से इसकी पत्तियों का सेवन करते हैं, और रक्त शर्करा में कमी की सूचना स्वयं देते हैं — यह एक लोक/अनुभवजन्य उपयोग है, नैदानिक रूप से स्थापित प्रभाव नहीं। इसे चकत्ते, बुखार, ब्रोंकाइटिस और आंतों के कीड़ों के लिए भी पारंपरिक रूप से उपयोग किया जाता है।",
-    "traditionalUseSa": "मधुमेहरोगिणः केचन परम्परया अस्य पत्राणि सेवन्ते, रक्तशर्करा-ह्रासं स्वयमेव कथयन्ति — इदं लोकानुभवाधारितं प्रयोगमात्रम्, न तु वैद्यकीयदृष्ट्या प्रमाणितम्। कुष्ठे, ज्वरे, कासश्वासे, कृमिरोगे च परम्परया उपयुज्यते।"
+    "traditionalUseSa": "मधुमेहरोगिणः केचन परम्परया अस्य पत्राणि सेवन्ते, रक्तशर्करा-ह्रासं स्वयमेव कथयन्ति — इदं लोकानुभवाधारितं प्रयोगमात्रम्, न तु वैद्यकीयदृष्ट्या प्रमाणितम्। कुष्ठे, ज्वरे, कासश्वासे, कृमिरोगे च परम्परया उपयुज्यते।",
+    "evidenceNote": "Alloxan-induced diabetic rat studies found the leaf extract lowered blood glucose comparably to the standard drug glibenclamide; a 2025 review identifies beta-sitosterol, corosolic acid, diosgenin, and quercetin as the compounds likely responsible.",
+    "citationAuthors": "Yadav et al.",
+    "citationYear": 2025,
+    "citationJournal": "Chemistry & Biodiversity",
+    "citationTitle": "Costus igneus: A Versatile Herbal Remedy for Multiple Health Conditions",
+    "citationDoi": "10.1002/cbdv.202402220",
+    "evidenceStatus": "experimentally_demonstrated",
+    "evidenceModel": "animal (rat) models",
+    "latitude": 28.5392,
+    "longitude": 77.1676
   },
   {
     "slug": "coleus-scutellarioides",
@@ -41,7 +71,17 @@
     "photo": "",
     "traditionalUseEn": "A folk medicinal plant traditionally used for malarial fever, liver disorders, kidney and bladder stones, cough, chronic asthma, hiccups, bronchitis, intestinal worms, colic, convulsions, and epilepsy.",
     "traditionalUseHi": "यह एक लोक औषधीय पौधा है, जो पारंपरिक रूप से मलेरिया बुखार, यकृत विकार, गुर्दे और मूत्राशय की पथरी, खांसी, दीर्घकालिक दमा, हिचकी, ब्रोंकाइटिस, आंतों के कीड़े, पेट दर्द और मिर्गी के दौरे में उपयोग किया जाता है।",
-    "traditionalUseSa": "एषा लोकौषधीया वनस्पतिः परम्परया विषमज्वरे, यकृद्विकारे, अश्मर्याम्, कासे, चिरकालिकश्वासरोगे, हिध्मायां, कृमिरोगे, शूले, अपस्मारे च उपयुज्यते।"
+    "traditionalUseSa": "एषा लोकौषधीया वनस्पतिः परम्परया विषमज्वरे, यकृद्विकारे, अश्मर्याम्, कासे, चिरकालिकश्वासरोगे, हिध्मायां, कृमिरोगे, शूले, अपस्मारे च उपयुज्यते।",
+    "evidenceNote": "A 2025 study of the purple-leafed variety found measurable antioxidant activity and enzyme-inhibition effects (alpha-glucosidase, alpha-amylase, xanthine oxidase) relevant to metabolic disorders, in laboratory (in vitro) assays.",
+    "citationAuthors": "Multiple authors",
+    "citationYear": 2025,
+    "citationJournal": "Biodiversitas Journal of Biological Diversity",
+    "citationTitle": "Botanical, phytochemical, and bioactivity characterization of Coleus scutellarioides",
+    "citationDoi": "",
+    "evidenceStatus": "experimentally_demonstrated",
+    "evidenceModel": "in vitro assays",
+    "latitude": 28.5392,
+    "longitude": 77.1676
   },
   {
     "slug": "citrus-limon",
@@ -52,7 +92,17 @@
     "photo": "",
     "traditionalUseEn": "A well-established dietary source of vitamin C, historically used to prevent and treat scurvy. Also traditionally used to help ease common cold and flu symptoms.",
     "traditionalUseHi": "विटामिन सी का एक सुस्थापित आहारिक स्रोत, जो ऐतिहासिक रूप से स्कर्वी रोग की रोकथाम और उपचार में प्रयुक्त होता रहा है। सामान्य जुकाम और फ्लू के लक्षणों को कम करने में भी पारंपरिक रूप से सहायक माना जाता है।",
-    "traditionalUseSa": "सी-जीवनसत्त्वस्य सुस्थापितः आहारस्रोतः, ऐतिहासिकदृष्ट्या स्कर्वीरोगस्य निवारणे चिकित्सायां च उपयुक्तः। पीनसे सहायकत्वेन परम्परया मन्यते।"
+    "traditionalUseSa": "सी-जीवनसत्त्वस्य सुस्थापितः आहारस्रोतः, ऐतिहासिकदृष्ट्या स्कर्वीरोगस्य निवारणे चिकित्सायां च उपयुक्तः। पीनसे सहायकत्वेन परम्परया मन्यते।",
+    "evidenceNote": "Lemon's vitamin C (ascorbic acid) content and its role in preventing and treating scurvy is well-established, foundational biochemistry rather than a single study finding.",
+    "citationAuthors": "",
+    "citationYear": null,
+    "citationJournal": "",
+    "citationTitle": "",
+    "citationDoi": "",
+    "evidenceStatus": "experimentally_demonstrated",
+    "evidenceModel": "established human nutritional science",
+    "latitude": 28.5392,
+    "longitude": 77.1676
   },
   {
     "slug": "moringa-oleifera",
@@ -63,7 +113,17 @@
     "photo": "",
     "traditionalUseEn": "Widely used nutritionally across many cultures; traditionally associated with supporting hemoglobin levels, healthy blood pressure and cholesterol, liver and kidney health, skin health, weight management, metabolism, blood sugar regulation, mood and stress, thyroid function, and lactation support in nursing mothers.",
     "traditionalUseHi": "अनेक संस्कृतियों में पोषण हेतु व्यापक रूप से उपयोग किया जाता है; पारंपरिक रूप से हीमोग्लोबिन स्तर, रक्तचाप और कोलेस्ट्रॉल, यकृत और गुर्दे के स्वास्थ्य, त्वचा स्वास्थ्य, वजन प्रबंधन, चयापचय, रक्त शर्करा नियंत्रण, मनोदशा और तनाव, थायरॉइड कार्य, तथा स्तनपान कराने वाली माताओं में दुग्ध उत्पादन से जोड़ा जाता है।",
-    "traditionalUseSa": "बहुषु संस्कृतिषु पोषणार्थं व्यापकतया उपयुज्यते; परम्परया रक्तहीमोग्लोबिन-वर्धने, रक्तचाप-कोलेस्ट्रॉल-नियमने, यकृद्वृक्कस्वास्थ्ये, त्वक्स्वास्थ्ये, स्थौल्यनियमने, चयापचये, रक्तशर्करानियमने, मनःस्थैर्ये, थायरॉइड-कार्ये, स्तन्यवर्धने च सम्बध्यते।"
+    "traditionalUseSa": "बहुषु संस्कृतिषु पोषणार्थं व्यापकतया उपयुज्यते। परम्परया अस्याः सम्बन्धः रक्तहीमोग्लोबिनवर्धनेन, हृद्रोगनिवारणेन, यकृद्वृक्कस्वास्थ्येन, त्वक्स्वास्थ्येन, स्थौल्यनियमनेन, रक्तशर्करानियमनेन, मनःप्रसादेन, तथा स्तन्यवर्धनेन सह कथ्यते।",
+    "evidenceNote": "A 2024 comprehensive review catalogues over 100 characterized compounds (flavonoids, alkaloids, carotenoids) and summarizes evidence across many primary studies for antioxidant, anti-inflammatory, antidiabetic, and cardioprotective effects.",
+    "citationAuthors": "Camilleri, E., Blundell, R.",
+    "citationYear": 2024,
+    "citationJournal": "Heliyon",
+    "citationTitle": "A comprehensive review of the phytochemicals, health benefits, pharmacological safety and medicinal prospects of Moringa oleifera",
+    "citationDoi": "10.1016/j.heliyon.2024.e27807",
+    "evidenceStatus": "experimentally_demonstrated",
+    "evidenceModel": "multiple in vitro and animal studies (reviewed)",
+    "latitude": 28.5392,
+    "longitude": 77.1676
   },
   {
     "slug": "hamelia-patens",
@@ -74,7 +134,18 @@
     "photo": "",
     "traditionalUseEn": "Used in folk herbal medicine for athlete's foot, skin lesions, and insect bites, and traditionally for inflammation, rheumatism, headache, asthma, and dysentery.",
     "traditionalUseHi": "लोक हर्बल चिकित्सा में एथलीट फुट, त्वचा घावों और कीड़ों के काटने के लिए, तथा पारंपरिक रूप से सूजन, गठिया, सिरदर्द, दमा और पेचिश के लिए उपयोग किया जाता है।",
-    "traditionalUseSa": "लोकौषधचिकित्सायां पादत्वक्विकारे, त्वग्व्रणे, कीटदंशे, तथा परम्परया शोथे, सन्धिवाते, शिरःशूले, श्वासरोगे, प्रवाहिकायां च उपयुज्यते।"
+    "traditionalUseSa": "लोकौषधचिकित्सायां पादत्वक्विकारे, त्वग्व्रणे, कीटदंशे, तथा परम्परया शोथे, सन्धिवाते, शिरःशूले, श्वासरोगे, प्रवाहिकायां च उपयुज्यते।",
+    "evidenceNote": "A 2020 review identifies chlorogenic acid and epicatechin as key bioactive compounds with antioxidant and anti-hyperglycemic activity, and a controlled animal study found the extract measurably increased wound-healing strength compared to untreated controls.",
+    "citationAuthors": "Multiple authors",
+    "citationYear": 2020,
+    "citationJournal": "PubMed (review)",
+    "citationTitle": "A Phytochemical and Ethnopharmacological Recapitulation on Hamelia patens",
+    "citationDoi": "",
+    "citationPmid": "32227313",
+    "evidenceStatus": "experimentally_demonstrated",
+    "evidenceModel": "animal models",
+    "latitude": 28.5392,
+    "longitude": 77.1676
   },
   {
     "slug": "cassia-fistula",
@@ -85,7 +156,17 @@
     "photo": "",
     "traditionalUseEn": "Traditionally used as a gentle natural laxative — the pulp of the ripe fruit pods is traditionally used for relief from constipation, an effect associated with the plant's anthraquinone compounds.",
     "traditionalUseHi": "पारंपरिक रूप से एक सौम्य प्राकृतिक रेचक के रूप में उपयोग किया जाता है — पके फल की फली का गूदा परंपरागत रूप से कब्ज से राहत के लिए उपयोग किया जाता है, यह प्रभाव पौधे के एन्थ्राक्विनोन यौगिकों से जुड़ा माना जाता है।",
-    "traditionalUseSa": "परम्परया सौम्य-स्वाभाविक-विरेचनरूपेण उपयुज्यते — पक्वफलस्य गुदः विबन्धनिवारणार्थं परम्परया प्रयुज्यते, अयं प्रभावः वनस्पतेः एन्थ्राक्विनोन-द्रव्यैः सम्बद्धः इति मन्यते।"
+    "traditionalUseSa": "परम्परया एकस्य सौम्यस्य स्वाभाविकस्य विरेचनद्रव्यस्य रूपेण उपयुज्यते — पक्वफलस्य गुदः विबन्धनिवारणार्थं प्रयुज्यते, अयं प्रभावः वनस्पतेः एन्थ्राक्विनोन-द्रव्यैः सम्बद्धः इति मन्यते।",
+    "evidenceNote": "Rhein, an anthraquinone glycoside concentrated in the ripe pod pulp, is the well-documented compound responsible for the plant's laxative action.",
+    "citationAuthors": "Danish, M., Singh, P., Mishra, G., Srivastava, S., Jha, K., Khosa, R.",
+    "citationYear": 2011,
+    "citationJournal": "Journal of Natural Products and Plant Resources",
+    "citationTitle": "Cassia fistula Linn.(Amulthus)-An important medicinal plant: a review of its traditional uses, phytochemistry and pharmacological properties",
+    "citationDoi": "",
+    "evidenceStatus": "experimentally_demonstrated",
+    "evidenceModel": "phytochemical + pharmacological studies (reviewed)",
+    "latitude": 28.5369,
+    "longitude": 77.1652
   },
   {
     "slug": "dianthus-praecox",
@@ -96,7 +177,17 @@
     "photo": "",
     "traditionalUseEn": "Used in folk herbal traditions as a bitter digestive and urinary tonic. Traditionally applied externally to skin inflammation and swelling.",
     "traditionalUseHi": "लोक हर्बल परंपराओं में एक कड़वे पाचक और मूत्र-टॉनिक के रूप में उपयोग किया जाता है। पारंपरिक रूप से त्वचा की सूजन पर बाहरी रूप से लगाया जाता है।",
-    "traditionalUseSa": "लोकौषधपरम्परासु तिक्तपाचकत्वेन, मूत्रलत्वेन च उपयुज्यते। त्वक्शोथे बाह्यप्रयोगेण परम्परया लेपनं क्रियते।"
+    "traditionalUseSa": "लोकौषधपरम्परासु तिक्तपाचकत्वेन, मूत्रलत्वेन च उपयुज्यते। त्वक्शोथे बाह्यप्रयोगेण परम्परया लेपनं क्रियते।",
+    "evidenceNote": "Note: the available literature covers the closely related common carnation, Dianthus caryophyllus, rather than confirming findings specifically for this campus specimen's variety. That literature documents flavonoids and phenolic acids with antioxidant, antibacterial, and anti-inflammatory activity.",
+    "citationAuthors": "Chandra, S., Rawat, D.S., Chandra, D., Rastogi, J.",
+    "citationYear": 2016,
+    "citationJournal": "Research Journal of Medicinal Plant",
+    "citationTitle": "Nativity, Phytochemistry, Ethnobotany and Pharmacology of Dianthus caryophyllus",
+    "citationDoi": "",
+    "evidenceStatus": "proposed",
+    "evidenceModel": "related-species literature, not this specimen's exact variety",
+    "latitude": 28.5406,
+    "longitude": 77.1664
   },
   {
     "slug": "canna-indica",
@@ -107,6 +198,16 @@
     "photo": "",
     "traditionalUseEn": "Traditionally used for earache, with the flowers folklorically associated with eye conditions. Some preclinical laboratory studies have reported analgesic activity from leaf extracts and anthelmintic activity from rhizome extracts against the earthworm model Pheretima posthuma — findings from animal/lab models, not yet clinical evidence in humans.",
     "traditionalUseHi": "पारंपरिक रूप से कान दर्द के लिए उपयोग किया जाता है, तथा लोक मान्यता में इसके फूलों को नेत्र रोगों से जोड़ा जाता है। कुछ प्रारंभिक प्रयोगशाला अध्ययनों में पत्तियों के अर्क से दर्दनाशक प्रभाव तथा प्रकंद के अर्क से केंचुआ मॉडल (Pheretima posthuma) पर कृमिनाशक प्रभाव पाया गया है — यह पशु/प्रयोगशाला मॉडल के निष्कर्ष हैं, मनुष्यों में नैदानिक प्रमाण अभी उपलब्ध नहीं है।",
-    "traditionalUseSa": "परम्परया कर्णशूले उपयुज्यते, पुष्पाणि च लोकमान्यतया नेत्ररोगैः सम्बध्यन्ते। केषुचित् प्रारम्भिकप्रयोगशालाध्ययनेषु पत्रसारस्य वेदनाहरत्वं, कन्दसारस्य च कृमिघ्नत्वं Pheretima posthuma इति भूकृमौ दृष्टम् — इदं पशु-प्रयोगशाला-आधारितं फलम्, न तु मनुष्येषु वैद्यकीयदृष्ट्या प्रमाणितम्।"
+    "traditionalUseSa": "परम्परया कर्णशूले उपयुज्यते, पुष्पाणि च लोकमान्यतया नेत्ररोगैः सम्बध्यन्ते। केषुचित् प्रारम्भिकप्रयोगशालाध्ययनेषु पत्रसारस्य वेदनाहरत्वं, कन्दसारस्य च कृमिघ्नत्वं Pheretima posthuma इति भूकृमौ दृष्टम् — इदं पशु-प्रयोगशाला-आधारितं फलम्, न तु मनुष्येषु वैद्यकीयदृष्ट्या प्रमाणितम्।",
+    "evidenceNote": "A controlled mouse study found leaf extracts produced measurable analgesic effects (hot-plate and writhing tests), and rhizome extracts caused paralysis in the earthworm Pheretima posthuma, an established anthelmintic-activity model.",
+    "citationAuthors": "Nirmal, S.A., Shelke, S.M., Gagare, P.B., Jadhav, P.R., Dethe, P.M.",
+    "citationYear": 2007,
+    "citationJournal": "Natural Product Research",
+    "citationTitle": "Antinociceptive and anthelmintic activity of Canna indica",
+    "citationDoi": "10.1080/14786410701526016",
+    "evidenceStatus": "experimentally_demonstrated",
+    "evidenceModel": "animal (mouse) and in vitro (earthworm) models",
+    "latitude": 28.5392,
+    "longitude": 77.1676
   }
 ]

@@ -12,7 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/about',
     '/research-areas',
     '/atlas',
-    '/faculty',
     '/resources',
     '/news',
     '/ayurveda-day',

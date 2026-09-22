@@ -62,37 +62,39 @@ export default async function PlantPage({
             <p className="font-body text-xs text-ink/50 mb-1">
               Evidence base: {plant.research.evidenceModel}
             </p>
-            <p className="font-body text-xs text-ink/60 border-t border-line pt-3 mt-3">
-              {plant.research.citation.authors} ({plant.research.citation.year ?? 'n.d.'}).{' '}
-              <em>{plant.research.citation.title}</em>.{' '}
-              {plant.research.citation.journal}.
-              {plant.research.citation.doi && (
-                <>
-                  {' '}
-                  <a
-                    href={`https://doi.org/${plant.research.citation.doi}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-clay hover:underline"
-                  >
-                    doi:{plant.research.citation.doi}
-                  </a>
-                </>
-              )}
-              {plant.research.citation.pmid && (
-                <>
-                  {' '}
-                  <a
-                    href={`https://pubmed.ncbi.nlm.nih.gov/${plant.research.citation.pmid}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-clay hover:underline"
-                  >
-                    PMID:{plant.research.citation.pmid}
-                  </a>
-                </>
-              )}
-            </p>
+            {plant.research.citation.authors && (
+              <p className="font-body text-xs text-ink/60 border-t border-line pt-3 mt-3">
+                {plant.research.citation.authors} ({plant.research.citation.year ?? 'n.d.'}).{' '}
+                <em>{plant.research.citation.title}</em>.{' '}
+                {plant.research.citation.journal}.
+                {plant.research.citation.doi && (
+                  <>
+                    {' '}
+                    <a
+                      href={`https://doi.org/${plant.research.citation.doi}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-clay hover:underline"
+                    >
+                      doi:{plant.research.citation.doi}
+                    </a>
+                  </>
+                )}
+                {plant.research.citation.pmid && (
+                  <>
+                    {' '}
+                    <a
+                      href={`https://pubmed.ncbi.nlm.nih.gov/${plant.research.citation.pmid}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-clay hover:underline"
+                    >
+                      PMID:{plant.research.citation.pmid}
+                    </a>
+                  </>
+                )}
+              </p>
+            )}
           </>
         ) : (
           <p className="font-body text-sm text-ink/60 max-w-prose">

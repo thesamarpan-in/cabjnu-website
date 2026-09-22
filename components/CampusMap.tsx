@@ -63,23 +63,43 @@ export default function CampusMap({ plants }: { plants: PlantWithCoords[] }) {
           const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
           return (
             <Marker key={key} position={[lat, lng]}>
-              <Popup>
-                <div className="font-body text-sm min-w-[160px]">
-                  <p className="font-bold mb-1">{group[0].location}</p>
-                  <ul className="mb-2 space-y-0.5">
+              <Popup maxWidth={280} minWidth={240}>
+                <div className="font-body text-sm">
+                  <p className="font-bold mb-2 text-ink">{group[0].location}</p>
+                  <div className="space-y-3 mb-3 max-h-[280px] overflow-y-auto">
                     {group.map((p) => (
-                      <li key={p.slug}>
-                        <Link href={`/atlas/${p.slug}`} className="text-clay hover:underline">
-                          {p.commonName}
-                        </Link>
-                      </li>
+                      <Link
+                        key={p.slug}
+                        href={`/atlas/${p.slug}`}
+                        className="flex gap-2.5 items-start hover:bg-black/[0.03] -mx-1 px-1 py-1 rounded transition-colors"
+                      >
+                        {p.photo ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            src={p.photo}
+                            alt={p.commonName}
+                            className="w-12 h-12 object-cover rounded flex-shrink-0"
+                          />
+                        ) : (
+                          <div className="w-12 h-12 rounded flex-shrink-0 bg-clay/10" />
+                        )}
+                        <div className="min-w-0">
+                          <p className="font-bold text-ink leading-tight truncate">
+                            {p.commonName}
+                          </p>
+                          <p className="text-[11px] italic text-ink/50 truncate">
+                            {p.scientificName}
+                          </p>
+                          <p className="text-[11px] text-ink/60 mt-0.5">{p.family}</p>
+                        </div>
+                      </Link>
                     ))}
-                  </ul>
+                  </div>
                   <a
                     href={directionsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs font-bold uppercase tracking-widest text-ink underline"
+                    className="text-xs font-bold uppercase tracking-widest text-white bg-clay px-3 py-2 rounded block text-center hover:bg-clay-dark transition-colors"
                   >
                     Get Directions →
                   </a>
